@@ -8,7 +8,13 @@ plugins {
 }
 
 jacoco {
-	toolVersion = "0.8.8"
+	toolVersion = "0.8.11"
+}
+
+jacocoTestReport {
+	reports {
+		xml.required = true
+	}
 }
 
 sonar {
@@ -19,6 +25,7 @@ sonar {
 
 		// 자코코 결과 리포트 주소
 		property 'sonar.coverage.jacoco.xmlReportPaths', 'build/reports/jacoco/index.xml'
+
 		property 'sonar.sources', 'src'
 		property 'sonar.language', 'java'
 		property 'sonar.sourceEncoding', 'UTF-8'
