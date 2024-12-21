@@ -1,17 +1,15 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/yoon
-    username: postgres
-    password: 1234
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
 
   jpa:
     hibernate:
       ddl-auto: update
-    properties:
-      hibernate:
-        format_sql: true
-        default_batch_fetch_size: 100
-    generate-ddl: true
+  h2:
+    console:
+      enabled: false
 
 logging.level:
   org.hibernate.SQL: debug
