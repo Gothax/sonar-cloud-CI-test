@@ -11,11 +11,6 @@ jacoco {
 	toolVersion = "0.8.11"
 }
 
-jacocoTestReport {
-	reports {
-		xml.required = true
-	}
-}
 
 sonar {
 	properties {
@@ -26,7 +21,7 @@ sonar {
 		// 자코코 결과 리포트 주소
 		property 'sonar.coverage.jacoco.xmlReportPaths', 'build/reports/jacoco/index.xml'
 
-		property 'sonar.sources', 'src'
+		property 'sonar.sources', 'src/main'
 		property 'sonar.language', 'java'
 		property 'sonar.sourceEncoding', 'UTF-8'
 		// 테스트 커버리지에서 제외할 클래스
@@ -58,4 +53,10 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+jacocoTestReport {
+	reports {
+		xml.required = true
+	}
 }
